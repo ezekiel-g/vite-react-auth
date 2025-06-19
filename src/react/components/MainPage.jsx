@@ -8,7 +8,7 @@ const MainPage = () => {
         : 'Hello, please sign in to continue'
 
     return (
-        <div className="container my-4">
+        <div className="container col-md-10 offset-md-1 my-4">
             <h1>{intro}</h1>
         </div>
     )

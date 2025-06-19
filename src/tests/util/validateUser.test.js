@@ -106,7 +106,7 @@ describe('validateEmployee', () => {
     it('returns validation error if password not re-entered', async () => {
         inputObject.reEnteredPassword = ''
         const validationResult = await validateUser(inputObject)
-        console.log(inputObject)
+        
         expect(validationResult).toEqual({
             valid: false,
             validationErrors:

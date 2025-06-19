@@ -120,7 +120,7 @@ const TwoFactorPage = () => {
         )        
 
         if (fetchResult.status >= 200 && fetchResult.status < 300) {
-            setPasswordFetchedToCompare(fetchResult.data?.password)
+            setPasswordFetchedToCompare(fetchResult.data[0]?.password)
         }
     }, [backEndUrl])
 

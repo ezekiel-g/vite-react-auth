@@ -14,7 +14,7 @@ const checkForDuplicate = async (
     excludeIdForUpdate = null
 ) => {
     const fetchResult = await fetchFunction()
-
+    
     if (fetchResult.length === 0 || !Array.isArray(fetchResult)) return 'pass'
     
     const [columnNameCamel] = Object.keys(entryObject)
