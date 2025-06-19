@@ -14,7 +14,7 @@ const fetchWithRefresh = async (
 
     const backEndUrl = import.meta.env.VITE_BACK_END_URL
     const refreshData = await fetchFromBackEnd(
-        `${backEndUrl}/api/v1/sessions`,
+        `${backEndUrl}/api/v1/sessions/refresh-session`,
         'POST',
         'application/json',
         'include'

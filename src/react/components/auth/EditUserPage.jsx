@@ -52,11 +52,11 @@ const EditUserPage = () => {
         if (!window.confirm(updateMessage)) return
 
         const fetchResult = await fetchWithRefresh(
-            `${backEndUrl}/api/v1/users/${user.id}`,
+            `${backEndUrl}/api/v1/users`,
             'PATCH',
             'application/json',
             'include',
-            { username, email, password, reEnteredPassword }
+            { id: user.id, username, email, password, reEnteredPassword }
         )
         
         if (fetchResult.data.validationErrors?.length > 0) {
@@ -129,9 +129,9 @@ const EditUserPage = () => {
             'application/json',
             'include'
         )        
-
+        
         if (fetchResult.status >= 200 && fetchResult.status < 300) {
-            setPasswordFetchedToCompare(fetchResult.data?.password)
+            setPasswordFetchedToCompare(fetchResult.data[0]?.password)
         }
     }, [backEndUrl])
     
